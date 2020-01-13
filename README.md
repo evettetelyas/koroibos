@@ -19,7 +19,7 @@ BE4 final
 
 ### Endpoints
 ### [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3928eb753f59d2d66b31)
-#### `GET /api/v1/olympians`
+#### - `GET /api/v1/olympians`
 response:
 ```
     [
@@ -41,7 +41,7 @@ response:
     ]
 ```
     
-#### `GET /api/v1/olympians?age=(oldest/youngest)`
+#### - `GET /api/v1/olympians?age=(oldest/youngest)`
 response:
 ```
     [
@@ -55,7 +55,7 @@ response:
     ]
 ```
     
-#### `GET /api/v1/olympian_stats`
+#### - `GET /api/v1/olympian_stats`
 response:
 
 ```
@@ -72,7 +72,7 @@ response:
     }
 ```
 
-#### `GET /api/v1/events`
+#### - `GET /api/v1/events`
 response:
 ```
    [
@@ -108,7 +108,7 @@ response:
     ]
 ```
 
-#### `GET /api/v1/events/:id/medalists`
+#### - `GET /api/v1/events/:id/medalists`
 response:
 ```
    {
