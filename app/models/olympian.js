@@ -20,8 +20,9 @@ const fetchByAge = (type) => database('olympians')
 	.catch(error => error)
 
 const totalCompeting = () => database('olympians')
-	.count()
-	.then(total => total[0].count)
+	.pluck('name')
+	.distinct()
+	.then(total => total.length)
 	.catch(error => error)
 
 const avgWeight = (gender) => database('olympians')
