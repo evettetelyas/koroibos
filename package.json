@@ -19,5 +19,11 @@
     "knex": "^0.20.7",
     "morgan": "^1.9.1",
     "pg": "^7.17.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^24.9.0",
+    "jest": "^24.9.0",
+    "shelljs": "^0.8.3",
+    "supertest": "^4.0.2"
   }
 }

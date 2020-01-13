@@ -14,6 +14,18 @@ module.exports = {
 		useNullAsDefault: true
   },
 
+	test: {
+    client: 'pg',
+		connection: 'postgres://localhost/koroibos_test',
+		migrations: {
+      directory: './db/migrations'
+		},
+		seeds: {
+      directory: './db/seeds'
+    },
+		useNullAsDefault: true
+	},
+	
   staging: {
     client: 'postgresql',
     connection: {
