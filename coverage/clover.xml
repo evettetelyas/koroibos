@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1578949692752" clover="3.2.0">
-  <project timestamp="1578949692752" name="All files">
+<coverage generated="1578954043216" clover="3.2.0">
+  <project timestamp="1578954043216" name="All files">
     <metrics statements="103" coveredstatements="79" conditionals="7" coveredconditionals="6" methods="53" coveredmethods="31" elements="163" coveredelements="116" complexity="0" loc="103" ncloc="103" packages="4" files="6" classes="6"/>
     <package name="koroibos">
       <metrics statements="17" coveredstatements="17" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
