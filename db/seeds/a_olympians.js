@@ -1,4 +1,5 @@
 const csvFilePath = './db/rawData/olympic_data_2016.csv'
+const importHelper = require('../../app/helpers/importHelper')
 const fs = require('fs');
 const path = require('path');
 var csvjson = require('csvjson');
@@ -12,8 +13,9 @@ exports.seed = function(knex) {
 	return knex('olympians').del()
 	  .then(async () => {
 		const olympData = await csvjson.toObject(data, options);
+		const formattedOlymps = await importHelper.formatter(olympData)
 		return Promise.all([
-			knex('olympians').insert(olympData)
+			knex('olympians').insert(formattedOlymps)
 		  .then(() => console.log('Seeding complete!'))
 			.catch(error => console.log(`Error seeding data: ${error}`))
 		])
