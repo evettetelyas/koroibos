@@ -21,7 +21,7 @@ BE4 final
 ### [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3928eb753f59d2d66b31)
 #### `GET /api/v1/olympians`
 response:
-    ```
+```
     [
     {
         "name": "Andreea Aanei",
@@ -39,7 +39,7 @@ response:
     },
     { ... }
     ]
-    ```
+```
     
 #### `GET /api/v1/olympians?age=(oldest/youngest)`
 response:
