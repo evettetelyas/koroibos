@@ -16,6 +16,22 @@ async function olympianIndex(data) {
 	return olympianView;
 }
 
+async function olympianStats() {
+	let obj = {
+    olympian_stats: {
+      total_competing_olympians: await Olympian.totalCompeting().then(num => num),
+      average_weight: {
+        unit: "kg",
+        male_olympians: await Olympian.avgWeight('M').then(num => num),
+        female_olympians: await Olympian.avgWeight('F').then(num => num)
+      },
+      average_age: await Olympian.avgAge().then(num => num)
+    }
+	}
+	return obj;
+}
+
 module.exports = {
-	olympianIndex
+	olympianIndex,
+	olympianStats
 }

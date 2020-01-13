@@ -14,5 +14,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 const olympiansController = require('./app/controllers/olympiansController')
 
 app.get("/api/v1/olympians", olympiansController.index)
+app.get("/api/v1/olympian_stats", olympiansController.stats)
 
 module.exports = app;

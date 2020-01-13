@@ -26,6 +26,12 @@ const index = (request, response) => {
 	};
 }
 
+const stats = async (_request, response) => {
+	return response.status(200).json(await formatHelper.olympianStats())
+}
+
+
 module.exports = {
-	index
+	index,
+	stats
 }
