@@ -43,7 +43,7 @@ response:
     
 #### `GET /api/v1/olympians?age=(oldest/youngest)`
 response:
-    ```
+```
     [
     {
         "name": "Ana Iulia Dascl",
@@ -53,10 +53,12 @@ response:
         "total_medals_won": 0
     }
     ]
-    ```
+```
+    
 #### `GET /api/v1/olympian_stats`
 response:
-    ```
+
+```
     {
     "olympian_stats": {
         "total_competing_olympians": 2845,
@@ -68,10 +70,11 @@ response:
         "average_age": "26.23"
       }
     }
-    ```
+```
+
 #### `GET /api/v1/events`
 response:
-   ```
+```
    [
     {
         "sport": "Archery",
@@ -103,10 +106,11 @@ response:
     },
     { ... }
     ]
-   ```
+```
+
 #### `GET /api/v1/events/:id/medalists`
 response:
-   ```
+```
    {
     "event": "Wrestling Men's Welterweight, Greco-Roman",
     "medalists": [
@@ -124,4 +128,4 @@ response:
         },
         { ... }
      ]
-   ```
+```
