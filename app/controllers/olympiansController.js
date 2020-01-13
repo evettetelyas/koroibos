@@ -30,8 +30,27 @@ const stats = async (_request, response) => {
 	return response.status(200).json(await formatHelper.olympianStats())
 }
 
+const events = async (_request, response) => {
+	Olympian.sports()
+	.then(async data => {
+		response.status(200).json(await formatHelper.events(data))
+	})
+	.catch(error => response.status(500).json(error))
+}
+
+const eventMedals = async (request, response) => {
+	var id = request.params.id
+	Olympian.getMedalists(id)
+	.then(async data => {
+		response.status(200).json(await formatHelper.medalists(data))
+	})
+	.catch(error => response.status(500).json(error))
+}
+
 
 module.exports = {
 	index,
-	stats
+	stats,
+	events,
+	eventMedals
 }

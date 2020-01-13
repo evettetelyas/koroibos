@@ -31,7 +31,43 @@ async function olympianStats() {
 	return obj;
 }
 
+async function events(sportData) {
+	let sportAry = []
+	await fetchHelper.asyncForEach(sportData, async (sport) => {
+		let obj = {
+			sport: sport,
+			events: await Olympian.sportEvents(sport)
+		}
+		sportAry.push(obj);
+	});
+	return sportAry;
+}
+
+async function eventMedalists(data) {
+	let medalistAry = []
+	await fetchHelper.asyncForEach(data, async (medalist) => {
+		let obj = {
+			name: medalist.name,
+			team: medalist.team,
+			age: medalist.age,
+			medal: medalist.medal
+		}
+		medalistAry.push(obj);
+	});
+	return medalistAry;
+}
+
+async function medalists(data) {
+	let obj = {
+		event: data[0].event_name,
+		medalists: await eventMedalists(data)
+	}
+	return obj;
+}
+
 module.exports = {
 	olympianIndex,
-	olympianStats
+	olympianStats,
+	events,
+	medalists
 }
