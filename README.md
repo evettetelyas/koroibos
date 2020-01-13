@@ -20,7 +20,7 @@ BE4 final
 ### Endpoints
 ### [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3928eb753f59d2d66b31)
 #### `GET /api/v1/olympians`
-    **sample response**
+response:
     ```
     [
     {
@@ -42,7 +42,7 @@ BE4 final
     ```
     
 #### `GET /api/v1/olympians?age=(oldest/youngest)`
-    **sample response**
+response:
     ```
     [
     {
@@ -55,7 +55,7 @@ BE4 final
     ]
     ```
 #### `GET /api/v1/olympian_stats`
-    **sample response**
+response:
     ```
     {
     "olympian_stats": {
@@ -70,6 +70,7 @@ BE4 final
     }
     ```
 #### `GET /api/v1/events`
+response:
    ```
    [
     {
@@ -104,6 +105,7 @@ BE4 final
     ]
    ```
 #### `GET /api/v1/events/:id/medalists`
+response:
    ```
    {
     "event": "Wrestling Men's Welterweight, Greco-Roman",
