@@ -22,6 +22,9 @@ BE4 final
 - `$ CREATE DATABASE <db name_test>;`
 - `$ \q`
 - `$ npm test`
+- Coverage
+    (https://i.ibb.co/zxxvL2r/Screen-Shot-2020-01-14-at-2-31-56-PM.png)
+
 
 ### Endpoints
 ### [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3928eb753f59d2d66b31)
