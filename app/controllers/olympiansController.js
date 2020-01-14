@@ -42,7 +42,13 @@ const eventMedals = async (request, response) => {
 	var id = request.params.id
 	Olympian.getMedalists(id)
 	.then(async data => {
-		response.status(200).json(await formatHelper.medalists(data))
+		switch (data.length) {
+			case 0:
+				response.status(200).json({message: `no event exists for id ${id}`})
+				break;
+			default:
+				response.status(200).json(await formatHelper.medalists(data))
+		}
 	})
 	.catch(error => response.status(500).json(error))
 }
