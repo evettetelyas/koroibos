@@ -35,7 +35,7 @@ const avgWeight = (gender) => database('olympians')
 const avgAge = () => database('olympians')
 	.select()
 	.avg('age')
-	.then(total => parseFloat(total[0].avg).toFixed(2))
+	.then(total => parseFloat(total[0].avg || 0).toFixed(2))
 	.catch(error => error)
 
 const sportEvents = (sport) => database('olympians')

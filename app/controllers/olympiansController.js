@@ -44,7 +44,7 @@ const eventMedals = async (request, response) => {
 	.then(async data => {
 		switch (data.length) {
 			case 0:
-				response.status(200).json({message: `no event exists for id ${id}`})
+				response.status(200).json({message: `no medalists exist for event id ${id}`})
 				break;
 			default:
 				response.status(200).json(await formatHelper.medalists(data))

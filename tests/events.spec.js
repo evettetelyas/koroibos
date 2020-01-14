@@ -10,6 +10,7 @@ const database = require('knex')(configuration);
 describe('Test the olympians path', () => {
   beforeEach(async () => {
     await database.raw('truncate table olympians cascade');
+    await database.raw('truncate table events cascade');
 
     let olympians = [
 			{
@@ -49,11 +50,18 @@ describe('Test the olympians path', () => {
 			medal: "Gold",
 		},
 	];
-    await database('olympians').insert(olympians, 'id');
+
+	let event = {
+		event_name: 'Cheerleading at 15,000 meters',
+		number_of_medalists: 1
+	}
+		await database('olympians').insert(olympians, 'id');
+		await database('events').insert(event, 'id')
   });
 
   afterEach(() => {
     database.raw('truncate table olympians cascade');
+    database.raw('truncate table events cascade');
   });
 
   describe('test events GET', () => {
@@ -66,6 +74,31 @@ describe('Test the olympians path', () => {
       expect(res.body[0]).toHaveProperty('sport');
       expect(res.body[0]["sport"]).toBe("Cheerleading");     
       expect(res.body[0]["events"].length).toBe(3);     
+    })
+	})
+
+	describe('test show events medalists GET', () => {
+    it('happy path', async () => {
+			const id = await database('events').where({event_name: 'Cheerleading at 15,000 meters'}).then(result => result[0].id)
+      const res = await request(app)
+        .get(`/api/v1/events/${id}/medalists`);
+
+      expect(res.statusCode).toBe(200);
+
+      expect(res.body).toHaveProperty('event');
+      expect(res.body).toHaveProperty('medalists');
+      expect(res.body["medalists"].length).toBe(1);     
+    })
+	})
+
+	describe('test events GET', () => {
+    it('sad path', async () => {
+      const res = await request(app)
+        .get("/api/v1/events/900/medalists");
+
+      expect(res.statusCode).toBe(200);
+
+      expect(res.body["message"]).toBe("no medalists exist for event id 900");     
     })
 	})
 });
