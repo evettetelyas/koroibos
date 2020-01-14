@@ -2,6 +2,12 @@
 BE4 final
 ## Production URL: https://koroiboss.herokuapp.com/
 
+### Tech Stack
+- Node.js
+- Express.js
+- Knex
+- Jest
+
 ### To run locally:
 - clone down repo
 - `$ npm install`
@@ -129,3 +135,6 @@ response:
         { ... }
      ]
 ```
+
+### Contributors
+- Evette Telyas (@evettetelyas)
