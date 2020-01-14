@@ -23,7 +23,7 @@ BE4 final
 - `$ \q`
 - `$ npm test`
 - Coverage
-    (https://i.ibb.co/zxxvL2r/Screen-Shot-2020-01-14-at-2-31-56-PM.png)
+    ![coverageimg](https://i.ibb.co/zxxvL2r/Screen-Shot-2020-01-14-at-2-31-56-PM.png)
 
 
 ### Endpoints
